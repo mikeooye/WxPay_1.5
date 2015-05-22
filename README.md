@@ -14,8 +14,8 @@ libc++.dylib
 2.添加预编译文件(如果已存在忽略)
 File->New->File,选择 Other->PCH file -> 保存（如 `PrefixHeader.pch`)
 添加如下内容
-#import <Foundation/Foundation.h>
-#import <UIKit/UIKit.h>
+`#import <Foundation/Foundation.h>`
+`#import <UIKit/UIKit.h>`
 
 3.设置预编译文件
 Target->Build Settings->Apple LLVM 6.0 - Language,将
@@ -24,10 +24,10 @@ Prefix Header -> 预编译文件的路径 (如 $(SRCROOT)/$(PROJECT_NAME)/Prefix
 
 4.设置回调处理
 打开 `AppDelegate.m`，加入
-#import "WxPayHelper.h"
+`#import "WxPayHelper.h"`
 
-在 - application:openURL:sourceApplication:annotation: 方法中，添加
-return [[WxPayHelper sharedInstance] handleURL:url]
+在 `- application:openURL:sourceApplication:annotation: `方法中，添加
+`return [[WxPayHelper sharedInstance] handleURL:url]`
 5.打开`WxPayConfigure.h`文件
 编辑需要修改的宏定义
 
